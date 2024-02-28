@@ -1,24 +1,28 @@
-package com.example.money2.entities;
+package com.example.money2.dtos;
 
+import com.example.money2.entities.Categorie;
+import com.example.money2.entities.Facture;
+import com.example.money2.entities.Projet;
+import com.example.money2.entities.Utilisateur;
 import com.example.money2.entities.enums.MoyennePaiement;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
-
-
-import javax.persistence.*;
-
-import java.time.LocalDate;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-public class Depense {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+@Builder
+public class DepenseDTO {
     private Long idDepense;
 
     private double montant;
@@ -31,20 +35,11 @@ public class Depense {
 
     private String notes;
 
-
-    @ManyToOne
-    @JoinColumn(name = "categorie_id")
     private Categorie categorie;
-
-
-
-
-    @OneToOne(mappedBy = "depense")
     private Facture facture;
-    @ManyToMany(mappedBy = "listeDepenses")
     private Set<Projet> listeProjets = new HashSet<>();
     private MoyennePaiement moyennePaiement;
-    @ManyToOne
+
     private Utilisateur utilisateur;
 
 
