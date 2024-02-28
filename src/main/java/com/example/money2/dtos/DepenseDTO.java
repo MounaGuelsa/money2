@@ -10,10 +10,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
@@ -25,21 +23,26 @@ import java.util.Set;
 public class DepenseDTO {
     private Long idDepense;
 
+    @Positive(message = "Le montant de la dépense doit être positif")
     private double montant;
 
+    @NotNull(message = "La date de la dépense doit être spécifiée")
     private LocalDate date;
 
+
     private String description;
-
     private String lieu;
-
     private String notes;
 
+    @NotNull(message = "La catégorie doit être spécifiée")
     private Categorie categorieDTO;
+
     private Facture factureDTO;
     private Set<Projet> listeProjetsDTO = new HashSet<>();
+
+    @NotNull(message = "Le moyen de paiement doit être spécifié")
     private MoyennePaiement moyennePaiement;
+
+    @NotNull(message = "L'utilisateur doit être spécifié")
     private Utilisateur utilisateurDTO;
-
-
 }

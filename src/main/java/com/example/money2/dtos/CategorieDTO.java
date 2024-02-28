@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Data
 @AllArgsConstructor
@@ -14,8 +16,9 @@ import lombok.NoArgsConstructor;
 public class CategorieDTO {
     private Long idCategorie;
 
+    @NotBlank(message = "Le nom de la catégorie ne peut pas être vide")
     private String nom;
 
+    @NotNull(message = "Le budget doit être spécifié")
     private Budget budgetDTO;
 }
-

@@ -8,9 +8,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
-
-
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Data
 @AllArgsConstructor
@@ -19,9 +18,12 @@ import lombok.NoArgsConstructor;
 public class NotificationDTO {
     private Long idNotif;
 
+    @NotBlank(message = "Le contenu de la notification ne peut pas être vide")
     private String contenuNotif;
 
+    @NotNull(message = "La date de création de la notification doit être spécifiée")
     private LocalDateTime dateCreationNotif;
-    private Utilisateur utilisateurDTO;
 
+    @NotNull(message = "L'utilisateur doit être spécifié")
+    private Utilisateur utilisateurDTO;
 }
