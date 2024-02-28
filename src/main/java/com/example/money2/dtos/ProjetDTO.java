@@ -24,7 +24,7 @@ public class ProjetDTO {
 
     private String nomProjet;
 
-    private Set<Depense> listeDepenses = new HashSet<>();
+    private Set<Depense> listeDepensesDTO = new HashSet<>();
 
-    private List<Rapport> listeRapports;
+    private List<Rapport> listeRapportsDTO;
 }

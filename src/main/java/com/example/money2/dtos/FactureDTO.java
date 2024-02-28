@@ -6,7 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,5 +18,5 @@ public class FactureDTO {
     private String fournisseur;
 
 
-    private Depense depense;
+    private Depense depenseDTO;
 }

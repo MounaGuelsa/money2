@@ -35,12 +35,11 @@ public class DepenseDTO {
 
     private String notes;
 
-    private Categorie categorie;
-    private Facture facture;
-    private Set<Projet> listeProjets = new HashSet<>();
+    private Categorie categorieDTO;
+    private Facture factureDTO;
+    private Set<Projet> listeProjetsDTO = new HashSet<>();
     private MoyennePaiement moyennePaiement;
-
-    private Utilisateur utilisateur;
+    private Utilisateur utilisateurDTO;
 
 
 }

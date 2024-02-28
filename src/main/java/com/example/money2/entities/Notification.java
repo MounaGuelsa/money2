@@ -21,6 +21,6 @@ public class Notification {
 
     private LocalDateTime dateCreationNotif;
 
-//    @ManyToOne
-//    private Utilisateur destinataire;
+    @ManyToOne
+    private Utilisateur utilisateur;
 }

@@ -16,6 +16,6 @@ public class CategorieDTO {
 
     private String nom;
 
-    private Budget budget;
+    private Budget budgetDTO;
 }
 

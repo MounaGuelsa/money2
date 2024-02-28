@@ -1,13 +1,17 @@
 package com.example.money2.dtos;
 
 import com.example.money2.entities.Projet;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+
 import java.time.LocalDate;
-
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class RapportDTO {
 
     private Long id;
@@ -18,6 +22,6 @@ public class RapportDTO {
 
     private String contenuRapport;
 
-    private Projet projet;
+    private Projet projetDTO;
 
 }

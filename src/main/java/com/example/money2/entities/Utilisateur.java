@@ -19,11 +19,13 @@ public class Utilisateur {
     private String nom;
 
     private String email;
-
     private String motDePasse;
 
     private Date dateInscription;
 
     @OneToMany(mappedBy = "utilisateur")
     private List<Depense> listeDepenses;
+
+    @OneToMany(mappedBy = "utilisateur")
+    private List<Notification> listeNotifs;
 }

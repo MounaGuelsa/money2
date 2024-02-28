@@ -17,5 +17,5 @@ public class BudgetDTO {
         private String nomBudget;
         private YearMonth mois;
         private double montant;
-        private Categorie categorie;
+        private Categorie categorieDTO;
 }

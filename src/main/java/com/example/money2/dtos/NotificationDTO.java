@@ -2,6 +2,7 @@ package com.example.money2.dtos;
 
 import java.time.LocalDateTime;
 
+import com.example.money2.entities.Utilisateur;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -21,4 +22,6 @@ public class NotificationDTO {
     private String contenuNotif;
 
     private LocalDateTime dateCreationNotif;
+    private Utilisateur utilisateurDTO;
+
 }
